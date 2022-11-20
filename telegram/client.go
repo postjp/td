@@ -15,7 +15,7 @@ import (
 	"github.com/gotd/td/internal/mtproto"
 	"github.com/gotd/td/internal/pool"
 	"github.com/gotd/td/internal/tdsync"
-	"github.com/gotd/td/oteltg"
+//	"github.com/gotd/td/oteltg"
 	"github.com/gotd/td/session"
 	"github.com/gotd/td/telegram/dcs"
 	"github.com/gotd/td/telegram/internal/manager"
