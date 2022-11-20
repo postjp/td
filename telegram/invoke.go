@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"strings"
 
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/trace"
 	"go.uber.org/zap"
 
 	"github.com/gotd/td/bin"
@@ -39,12 +37,6 @@ func (c *Client) Invoke(ctx context.Context, input bin.Encoder, output bin.Decod
 			}
 			spanName = fmt.Sprintf("Invoke: %s", name)
 		}
-		spanCtx, span := c.tracer.Start(ctx, spanName,
-			trace.WithAttributes(attrs...),
-			trace.WithSpanKind(trace.SpanKindClient),
-		)
-		ctx = spanCtx
-		defer span.End()
 	}
 
 	return c.invoker.Invoke(ctx, input, output)
