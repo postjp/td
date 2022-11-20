@@ -4,7 +4,6 @@ import (
 	"io"
 	"time"
 
-	"go.opentelemetry.io/otel/trace"
 	"go.uber.org/zap"
 
 	"github.com/gotd/td/bin"
@@ -74,8 +73,6 @@ type Options struct {
 	// Salt from server that can be used to restore previous connection.
 	Salt int64
 
-	// Tracer for OTEL.
-	Tracer trace.Tracer
 
 	// Private options.
 
